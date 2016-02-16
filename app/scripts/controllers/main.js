@@ -12,4 +12,8 @@ angular.module('angularTestApp')
     
     $scope.total = 0;
 
+    $scope.setOpenTrueOnCalculator = function() {
+    	console.log('setOpenTrueOnCalculator');
+    };
+
 });
