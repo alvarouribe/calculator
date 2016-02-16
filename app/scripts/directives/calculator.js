@@ -3,7 +3,7 @@
 angular.module('angularTestApp').directive('calculator', function() {
   return {
     restrict: 'E',
-    replace: 'true',
+    replace: 'false',
     templateUrl: 'views/directives/calculator.html',
     scope: {
       //I can bind attributes from outside of a directive
