@@ -1,0 +1,35 @@
+
+<div>
+	
+	<button ng-click="toggleVisibility()" class="minusIcon3">
+	 <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>
+	</button>
+
+	<div class="row">
+		bla: {{open}}
+
+
+	    <table id="calculatorTable">
+	      <calculator-row></calculator-row>
+	      <calculator-row></calculator-row>
+	      <calculator-row></calculator-row>
+	      <calculator-row></calculator-row>
+	    </table>
+
+	    <table id="totalTable">
+	      <tr>
+	        <td></td>
+	        <td></td>
+	        <td class="right"> Total : {{total}} </td>
+	      </tr>
+	      <tr>
+	        <td class="center" colspan="3">
+	          <button ng-click="clearCalculator(this);" class="button small">
+	            clear
+	          </button></td>
+	      </tr>
+	    </table>
+
+  </div>
+
+</div> 
