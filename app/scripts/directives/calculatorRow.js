@@ -8,7 +8,7 @@ angular.module('angularTestApp').directive('calculatorRow', function() {
     template: '<tr>' +
                 '<td><input type="number" style="width:60px"  min="0" id="left_txt_0"  ng-model="left"     ng-blur="printLeft(left)"> x </td>' + 
                 '<td><input type="number" style="width:60px"  min="0" id="right_txt_0" ng-model="right"    ng-blur="printRight(right)"> = </td> ' +
-                '<td><input type="number" style="width:60px" min="0" id="total_0"     ng-model="subTotal" readonly="true"></td> ' +
+                '<td><input type="number" style="width:60px" min="0" id="total_0" sum="subTotal"    ng-model="subTotal" readonly="true"></td> ' +
               '</tr>'
     ,
     controller: function($scope) {    
