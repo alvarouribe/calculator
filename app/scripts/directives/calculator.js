@@ -21,9 +21,14 @@ angular.module('angularTestApp').directive('calculator', function() {
       }
 
       $scope.sumSubtotal = function(index, subTotal) {
-        $scope.total = subTotal;
+        $scope.total = $scope.row1.total + $scope.row2.total + $scope.row3.total + $scope.row4.total;
         // console.log('subTotal:' + $scope.total);
       }
+      
+      $scope.$watch('row1.total', $scope.sumSubtotal);
+      $scope.$watch('row2.total', $scope.sumSubtotal);
+      $scope.$watch('row3.total', $scope.sumSubtotal);
+      $scope.$watch('row4.total', $scope.sumSubtotal);
       // console.log($scope.componentAttributes.location); //I can access the $scope
     },
     link: function(scope) {
@@ -32,6 +37,11 @@ angular.module('angularTestApp').directive('calculator', function() {
       // I will run SECOND when the directive it is found 
       //I can create isolated variables that are only visible in the view
       scope.open = true;
+      
+      scope.row1 = {};
+      scope.row2 = {};
+      scope.row3 = {};
+      scope.row4 = {};
     }
   };
 });
