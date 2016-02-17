@@ -4,33 +4,33 @@ angular.module('angularTestApp').directive('calculatorRow', function() {
   return {
     restrict: 'E',
     replace: 'true',
-    scope: {},
+    scope: {
+        row: '='
+    },
     template: '<tr>' +
-                '<td><input type="number" style="width:60px"  min="0" id="left_txt_0"  ng-model="left"     ng-blur="printLeft(left)"> x </td>' + 
-                '<td><input type="number" style="width:60px"  min="0" id="right_txt_0" ng-model="right"    ng-blur="printRight(right)"> = </td> ' +
-                '<td><input type="number" style="width:60px" min="0" id="total_0" sum="subTotal"    ng-model="subTotal" readonly="true"></td> ' +
+                '<td><input type="number" style="width:60px"  min="0" id="left_txt_0"  ng-model="row.left"     ng-blur="printLeft(row.left)"> x </td>' + 
+                '<td><input type="number" style="width:60px"  min="0" id="right_txt_0" ng-model="row.right"    ng-blur="printRight(row.right)"> = </td> ' +
+                '<td><input type="number" style="width:60px" min="0" id="total_0"     ng-model="row.total" readonly="true"></td> ' +
               '</tr>'
     ,
     controller: function($scope) {    
         // console.log($scope);
 
         $scope.printLeft = function(left) {
-            if ($scope.right > 0) {
-               $scope.subTotal =  left * $scope.right;
-               $scope.$parent.sumSubtotal(0, $scope.subTotal);
+            if ($scope.row.right > 0) {
+               $scope.row.total =  left * $scope.row.right;
             }
         }
         $scope.printRight = function(right) {
-            if ($scope.left > 0) {
-               $scope.subTotal =  $scope.left * right;
-               $scope.$parent.sumSubtotal(0, $scope.subTotal);
+            if ($scope.row.left > 0) {
+               $scope.row.total =  $scope.row.left * right;
             }
         }
     },
     link: function(scope, element, attrs) {
-        scope.left = 0;
-        scope.right = 0;
-        scope.subTotal = 0;
+        scope.row.left = 0;
+        scope.row.right = 0;
+        scope.row.total = 0;
     }
 
   }
