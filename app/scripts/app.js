@@ -24,6 +24,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/list', {
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl',
+        controllerAs: 'list'
+      })
       .otherwise({
         redirectTo: '/'
       });

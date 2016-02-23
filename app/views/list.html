@@ -1,0 +1,42 @@
+<h1>List</h1>	
+
+<div class="jumbotron">
+	<p>This example creates a bind on an ng-repeat element li and shows how to bidn a function to a directive </p>
+	<p>
+		Next step isolate an scope for each directive to open and close.
+	</p>
+</div>
+
+<code>
+  list.todos = [ { <br>
+  								text:'learn angular', <br>
+  								done:true, <br>
+  								numeros: ['one','two','3']<br>
+  							},<br>
+    						{<br>
+    							text:'build an angular app', <br>
+    							done:false, <br>
+    							numeros: ['one','two','3']<br>
+    						},<br>
+    					];
+	</code>
+
+<div>
+
+	<h2>UL: todos</h2>
+
+		<ul>
+			<li ng-repeat="todo in list.todos" clic-me>
+				{{todo.text}}
+			
+				<h3>UL:</h3>
+
+				<ul>
+					<li ng-repeat="numero in todo.numeros">
+						{{numero}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+</div>
