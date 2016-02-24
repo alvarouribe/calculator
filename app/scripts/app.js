@@ -29,6 +29,11 @@ angular
         controller: 'ListCtrl',
         controllerAs: 'list'
       })
+      .when('/filter', {
+        templateUrl: 'views/customfilter.html',
+        controller: 'CustomfilterCtrl',
+        controllerAs: 'filter'
+      })
       .otherwise({
         redirectTo: '/'
       });

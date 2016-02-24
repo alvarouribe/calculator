@@ -1,0 +1,13 @@
+<p>This is the customFilter view.</p>
+
+<p>
+search : <input type="text" ng-model="filterString"></input> 
+
+<!-- {{filter.empList}} -->
+	<i style="color:gray;">Items showing: {{filtered.length}}</i> 
+</p>
+<br>
+<div ng-repeat="componentAttributes in filtered = (filter.empList) | filter: filterString">
+
+	{{componentAttributes.dept}} | {{componentAttributes.name}} | {{componentAttributes.gender}} 
+</div>
