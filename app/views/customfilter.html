@@ -1,13 +1,35 @@
-<p>This is the customFilter view.</p>
+<h1>Custom Filter <i class="notes">Angular Working: {{filter.test}}</i></h1>
 
 <p>
-search : <input type="text" ng-model="filterString"></input> 
 
-<!-- {{filter.empList}} -->
-	<i style="color:gray;">Items showing: {{filtered.length}}</i> 
+	Normal $filter search : <input type="text" ng-model="filterString"></input> 
+
+	<i class="notes" ng-if="filtered.length > 0">Items showing: {{filtered.length}}</i> 
+
 </p>
-<br>
-<div ng-repeat="componentAttributes in filtered = (filter.empList) | filter: filterString">
 
-	{{componentAttributes.dept}} | {{componentAttributes.name}} | {{componentAttributes.gender}} 
-</div>
+<hr>
+
+<table>
+	<tr>
+		<th>Dept</th>
+		<th>Name</th>
+		<th>Gender</th>
+	</tr>
+	<tr ng-repeat="employee in filtered = (filter.empList | filter: filterString)">
+		<td>{{employee.dept}}</td> 
+		<td>{{employee.name}}</td> 
+		<td>{{employee.gender}}</td>	
+	</tr>
+</table>
+
+<hr>
+<h2>Json</h2>
+
+<code>
+	{{filtered}}
+</code>
+
+<code>
+	{{filter.empList}}
+</code>

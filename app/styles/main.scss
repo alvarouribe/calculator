@@ -107,3 +107,22 @@ ul ul ul{
 .roja {
   background-color: red;
 }
+
+.notes {
+  color:gray; 
+  font-size:10px;
+}
+
+table {
+  tr {
+    th {
+      margin-bottom: 10px;
+      border-bottom: 1px solid grey;
+    }
+  }
+
+  td {
+    width: 100px;
+  }
+
+}
